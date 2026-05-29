@@ -1927,7 +1927,7 @@ document.addEventListener('DOMContentLoaded', () => {
     else { sobreVid.addEventListener('playing', crossfade, {once:true}); }
   });
 
-  const VIDEO_CUT = 3;
+  const VIDEO_CUT = 7.5;
   let videoCutDone = false;
   sobreVid.addEventListener('timeupdate', () => {
     if(!videoCutDone && sobreVid.currentTime >= VIDEO_CUT){
