@@ -297,7 +297,7 @@ section{padding:64px 22px}
 .h-monogram{
   display:flex;align-items:baseline;justify-content:center;
   position:relative;line-height:1;margin-bottom:0;
-  padding:0 14px 24px;
+  padding:38px 44px 56px;
   text-shadow:0 2px 40px rgba(0,0,0,.35);
   overflow:visible;
 }
@@ -307,21 +307,21 @@ section{padding:64px 22px}
   display:inline-block;line-height:1;
 }
 .mono-k{
-  font-size:clamp(96px,28vw,150px);font-weight:400;font-style:italic;
+  font-size:clamp(74px,22vw,120px);font-weight:400;font-style:italic;
   position:relative;z-index:2;
-  margin-right:18px;
+  margin-right:14px;
 }
 .mono-m{
-  font-size:clamp(96px,28vw,150px);font-weight:400;font-style:normal;
-  margin-left:18px;position:relative;z-index:1;
+  font-size:clamp(74px,22vw,120px);font-weight:400;font-style:normal;
+  margin-left:14px;position:relative;z-index:1;
 }
 .mono-amp{
   font-family:'Great Vibes',cursive;
-  font-size:clamp(56px,16vw,82px);font-weight:400;font-style:italic;
+  font-size:clamp(46px,13vw,68px);font-weight:400;font-style:italic;
   color:rgba(255,255,255,.92);
   display:inline-block;line-height:1;
   position:relative;z-index:3;
-  transform:translateY(-12px);
+  transform:translateY(-10px);
   text-shadow:0 2px 30px rgba(0,0,0,.4);
 }
 .h-scroll{
@@ -895,6 +895,99 @@ section.has-sec-waves{padding-top:84px;padding-bottom:86px}
   opacity:.78;
 }
 
+/* ── UBICACIÓN UNIFICADA (mismo lugar ceremonia+recepción) ── */
+.loc-unified{
+  background:var(--ink);
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid var(--hair);
+  box-shadow:0 10px 36px rgba(20,34,58,.10);
+}
+.loc-unified-photo{
+  width:100%;height:230px;
+  overflow:hidden;position:relative;
+  background:var(--ink3);
+}
+.loc-unified-photo img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  display:block;
+}
+.loc-unified-photo::after{
+  content:'';position:absolute;inset:auto 0 0 0;height:55%;
+  background:linear-gradient(to top,rgba(20,34,58,.42),transparent);
+  pointer-events:none;
+}
+.loc-unified-body{
+  padding:30px 26px 32px;
+  text-align:center;
+}
+.loc-unified-eyebrow{
+  font-family:'Lato',sans-serif;
+  font-size:10.5px;letter-spacing:3.5px;text-transform:uppercase;
+  font-weight:700;color:var(--peach-accent);
+  display:block;margin-bottom:10px;
+}
+.loc-unified-venue{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(28px,7vw,34px);font-weight:700;
+  color:var(--cream);line-height:1.15;
+  margin:0 0 10px;letter-spacing:.3px;
+}
+.loc-unified-addr{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:16px;color:var(--cream-soft);
+  line-height:1.5;
+  margin:0 0 22px;
+}
+.loc-unified-times{
+  display:flex;align-items:stretch;justify-content:center;
+  margin:0 0 24px;
+  padding:18px 12px;
+  border-top:1px solid var(--hair);
+  border-bottom:1px solid var(--hair);
+  gap:8px;
+}
+.loc-time-block{
+  flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;
+  color:var(--peach-accent);
+}
+.loc-time-ico{
+  width:32px;height:32px;
+  display:flex;align-items:center;justify-content:center;
+}
+.loc-time-ico svg{width:32px;height:32px;}
+.loc-time-label{
+  font-family:'Lato',sans-serif;
+  font-size:9.5px;letter-spacing:3px;text-transform:uppercase;
+  font-weight:700;color:var(--cream-soft);
+  margin-top:2px;
+}
+.loc-time-value{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-weight:700;
+  color:var(--cream);
+  letter-spacing:.5px;
+}
+.loc-time-divider{
+  width:1px;background:linear-gradient(to bottom,transparent,var(--hair) 30%,var(--hair) 70%,transparent);
+  margin:0 4px;
+}
+.loc-unified-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 26px;border-radius:30px;
+  background:var(--peach-accent);color:#fff;
+  font-family:'Lato',sans-serif;
+  font-size:11.5px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;
+  text-decoration:none;
+  transition:transform .2s var(--spring),background .3s;
+}
+.loc-unified-btn:active{transform:scale(.96)}
+@media(hover:hover){
+  .loc-unified-btn:hover{background:var(--peach)}
+}
+
 /* ── HOTELES ──────────────────────────────────────────── */
 .hotels-wrap{
   max-width:360px;margin:0 auto;
@@ -1086,48 +1179,54 @@ section.has-sec-waves{padding-top:84px;padding-bottom:86px}
 <section id="location">
 
   <div class="loc-wrap">
-  <!-- Ceremonia Religiosa -->
-  <div class="loc-block">
-    <div class="loc-icon" aria-hidden="true">
-      <svg viewBox="0 0 64 64" fill="none" stroke="var(--cream)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M32 6l-1 4M32 6l1 4"/><path d="M32 10v4"/>
-        <line x1="29" y1="12" x2="35" y2="12"/>
-        <path d="M22 28h20l-2-10H24l-2 10z"/>
-        <rect x="18" y="28" width="28" height="24" rx="1"/>
-        <path d="M18 52h28"/>
-        <rect x="28" y="38" width="8" height="14" rx="1"/>
-        <circle cx="32" cy="33" r="3"/>
-        <path d="M28 22l4-4 4 4"/>
-      </svg>
-    </div>
-    <p class="loc-title">Ceremonia</p>
-    <div class="loc-photo">
-      <img src="fotos-cliente/foto-1.jpg" alt="Jardín Shanti Petite — Tijuana, Baja California" loading="lazy">
-    </div>
-    <p class="loc-time">6:20 pm</p>
-    <p class="loc-venue">Jardín Shanti Petite<br>Calz. Defensores de Baja California 330<br>Tijuana, Baja California</p>
-    <a href="https://maps.apple.com/place?address=Calzada%20Defensores%20de%20Baj%C3%A1%20California%20330,%20Ruiz%20Cortinez,%2022406%20Tijuana,%20B.C.,%20M%C3%A9xico&coordinate=32.528999,-117.009020&name=JARDIN%20SHANTI%20Petite&place-id=I52B215316D876BF8&map=explore" target="_blank" rel="noopener" class="loc-btn">Ver Ubicación</a>
-  </div>
+    <!-- Ceremonia + Recepción · mismo lugar -->
+    <div class="loc-unified">
+      <div class="loc-unified-photo">
+        <img src="fotos-cliente/jardin-shanti.jpg" alt="Jardín Shanti Petite — Tijuana, Baja California" loading="lazy">
+      </div>
+      <div class="loc-unified-body">
+        <span class="loc-unified-eyebrow">El día de nuestra boda</span>
+        <h3 class="loc-unified-venue">Jardín Shanti Petite</h3>
+        <p class="loc-unified-addr">Calz. Defensores de Baja California 330<br>Ruiz Cortinez · Tijuana, B.C.</p>
 
-  <!-- Recepción -->
-  <div class="loc-block">
-    <div class="loc-icon" aria-hidden="true">
-      <svg viewBox="0 0 64 64" fill="none" stroke="var(--cream)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M20 38c0-12 6-18 10-24"/><path d="M44 38c0-12-6-18-10-24"/>
-        <ellipse cx="20" cy="40" rx="6" ry="3"/><ellipse cx="44" cy="40" rx="6" ry="3"/>
-        <line x1="20" y1="43" x2="20" y2="54"/><line x1="44" y1="43" x2="44" y2="54"/>
-        <ellipse cx="20" cy="55" rx="7" ry="2"/><ellipse cx="44" cy="55" rx="7" ry="2"/>
-        <path d="M32 10l-1-4M32 10l1-4M30 7h4"/>
-      </svg>
+        <div class="loc-unified-times">
+          <div class="loc-time-block">
+            <div class="loc-time-ico" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="24" y1="4" x2="24" y2="10"/>
+                <line x1="20" y1="7" x2="28" y2="7"/>
+                <path d="M14 22 L24 12 L34 22"/>
+                <rect x="14" y="22" width="20" height="20" rx="0.5"/>
+                <path d="M19 42 L19 32 Q24 28 29 32 L29 42"/>
+              </svg>
+            </div>
+            <span class="loc-time-label">Ceremonia</span>
+            <span class="loc-time-value">6:20 PM</span>
+          </div>
+          <div class="loc-time-divider" aria-hidden="true"></div>
+          <div class="loc-time-block">
+            <div class="loc-time-ico" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 6 L11 22 L18 22 Z"/>
+                <line x1="14.5" y1="22" x2="14.5" y2="34"/>
+                <line x1="10" y1="34" x2="19" y2="34"/>
+                <path d="M34 6 L31 22 L38 22 Z"/>
+                <line x1="34.5" y1="22" x2="34.5" y2="34"/>
+                <line x1="30" y1="34" x2="39" y2="34"/>
+                <line x1="18" y1="8" x2="31" y2="8"/>
+              </svg>
+            </div>
+            <span class="loc-time-label">Recepción</span>
+            <span class="loc-time-value">7:00 PM</span>
+          </div>
+        </div>
+
+        <a href="https://maps.apple.com/place?address=Calzada%20Defensores%20de%20Baj%C3%A1%20California%20330,%20Ruiz%20Cortinez,%2022406%20Tijuana,%20B.C.,%20M%C3%A9xico&coordinate=32.528999,-117.009020&name=JARDIN%20SHANTI%20Petite&place-id=I52B215316D876BF8&map=explore" target="_blank" rel="noopener" class="loc-unified-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Ver Ubicación
+        </a>
+      </div>
     </div>
-    <p class="loc-title">Recepción</p>
-    <div class="loc-photo">
-      <img src="fotos-cliente/foto-4.jpg" alt="Jardín Shanti Petite — Tijuana, Baja California" loading="lazy">
-    </div>
-    <p class="loc-time">7:00 pm</p>
-    <p class="loc-venue">Jardín Shanti Petite<br>Calz. Defensores de Baja California 330<br>Tijuana, Baja California</p>
-    <a href="https://maps.apple.com/place?address=Calzada%20Defensores%20de%20Baj%C3%A1%20California%20330,%20Ruiz%20Cortinez,%2022406%20Tijuana,%20B.C.,%20M%C3%A9xico&coordinate=32.528999,-117.009020&name=JARDIN%20SHANTI%20Petite&place-id=I52B215316D876BF8&map=explore" target="_blank" rel="noopener" class="loc-btn">Ver Ubicación</a>
-  </div>
   </div><!-- /loc-wrap -->
 
 </section>
@@ -1916,7 +2015,7 @@ function scrollAnims() {
   });
   gsap.from('.cd-content', { opacity:0, y:18, duration:.7, ease, scrollTrigger:{ trigger:'#countdown', start:'top 85%', once:true } });
   ScrollTrigger.create({ trigger:'#location', start:'top 78%', once:true,
-    onEnter(){ gsap.from('.loc-block', { opacity:0, y:36, duration:.75, stagger:.18, ease }); }
+    onEnter(){ gsap.from('.loc-unified', { opacity:0, y:36, duration:.85, ease }); }
   });
   gsap.from('#calendar .cal-sub', { opacity:0, y:14, duration:.6, ease, scrollTrigger:{ trigger:'#calendar', start:'top 84%', once:true } });
   gsap.from('#calBtn', { y:14, duration:.55, ease:'back.out(1.4)', scrollTrigger:{ trigger:'#calendar', start:'top 85%', once:true } });
