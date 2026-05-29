@@ -560,7 +560,7 @@ section{padding:64px 22px}
 .dc-title{font-family:'Lato',sans-serif;font-size:clamp(20px,5vw,26px);letter-spacing:6px;font-weight:700;text-transform:uppercase;color:#fff;text-align:center;margin-bottom:28px;line-height:1.1;}
 .dc-outfits{display:flex;align-items:flex-end;justify-content:center;gap:18px;margin:0 auto 28px;max-width:340px;}
 .dc-outfit{display:flex;flex-direction:column;align-items:center;}
-.dc-outfit svg{height:200px;width:auto;}
+.dc-outfit svg{height:230px;width:auto;overflow:visible;}
 .dc-type-txt{
   font-family:'Cormorant Garamond',serif;font-size:clamp(22px,6vw,30px);font-weight:600;
   letter-spacing:6px;text-transform:uppercase;color:#fff;text-align:center;margin-bottom:24px;
@@ -895,6 +895,76 @@ section.has-sec-waves{padding-top:84px;padding-bottom:86px}
   opacity:.78;
 }
 
+/* ── HOTELES ──────────────────────────────────────────── */
+.hotels-wrap{
+  max-width:360px;margin:0 auto;
+  display:flex;flex-direction:column;gap:18px;
+}
+.hotel-card{
+  display:block;
+  background:var(--ink);
+  border-radius:16px;
+  overflow:hidden;
+  text-decoration:none;
+  color:var(--cream);
+  border:1px solid var(--hair);
+  box-shadow:0 4px 22px rgba(20,34,58,.10);
+  transition:transform .35s var(--spring),box-shadow .35s;
+}
+.hotel-card:active{transform:scale(.98)}
+@media(hover:hover){
+  .hotel-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(20,34,58,.16)}
+}
+.hotel-photo{
+  width:100%;height:180px;
+  overflow:hidden;position:relative;
+  background:var(--ink3);
+}
+.hotel-photo img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  display:block;
+  transition:transform .8s var(--smooth);
+}
+@media(hover:hover){
+  .hotel-card:hover .hotel-photo img{transform:scale(1.05)}
+}
+.hotel-photo::after{
+  content:'';position:absolute;inset:auto 0 0 0;height:60%;
+  background:linear-gradient(to top,rgba(20,34,58,.42),transparent);
+  pointer-events:none;
+}
+.hotel-body{
+  padding:20px 22px 22px;
+  text-align:left;
+  border-top:1px solid var(--hair);
+}
+.hotel-eyebrow{
+  font-family:'Lato',sans-serif;
+  font-size:10px;letter-spacing:3px;text-transform:uppercase;
+  font-weight:700;color:var(--peach-accent);
+  display:block;margin-bottom:6px;
+}
+.hotel-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;font-weight:700;
+  color:var(--cream);line-height:1.2;
+  margin:0 0 4px;
+}
+.hotel-loc{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:15px;color:var(--cream-soft);
+  margin:0 0 14px;
+}
+.hotel-cta{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:9px 18px;border-radius:30px;
+  background:var(--peach-accent);color:#fff;
+  font-family:'Lato',sans-serif;
+  font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;
+}
+
 /* ── REDUCED MOTION ───────────────────────────────────── */
 @media(prefers-reduced-motion:reduce){
   .lbl,.wind-orn,.gline::after,.loc-block,.fam-card,.vinyl-btn{animation:none!important;transition:none!important;}
@@ -1084,14 +1154,34 @@ section.has-sec-waves{padding-top:84px;padding-bottom:86px}
   <h2 class="ttl">Hoteles Sugeridos</h2>
   <div class="gline"></div>
   <p style="text-align:center;font-size:16px;color:var(--cream);opacity:.75;line-height:1.7;margin:14px 0 30px;font-weight:500;max-width:320px;margin-left:auto;margin-right:auto;">Te recomendamos estas opciones cercanas al recinto.</p>
-  <div style="max-width:340px;margin:0 auto;display:flex;flex-direction:column;gap:14px;">
-    <a href="https://www.guestreservations.com/real-inn-tijuana-by-camino-real/booking" target="_blank" rel="noopener" class="btn btn-blue" style="flex-direction:column;align-items:stretch;padding:18px 20px;text-align:left;gap:4px;">
-      <span style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;letter-spacing:1.5px;text-transform:none;">Real Inn Tijuana</span>
-      <span style="font-family:'Lato',sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;opacity:.85;">Ver y reservar</span>
+  <div class="hotels-wrap">
+    <a href="https://www.guestreservations.com/real-inn-tijuana-by-camino-real/booking" target="_blank" rel="noopener" class="hotel-card">
+      <div class="hotel-photo">
+        <img src="fotos-cliente/hotel-realinn.jpg" alt="Real Inn Tijuana" loading="lazy">
+      </div>
+      <div class="hotel-body">
+        <span class="hotel-eyebrow">Hospedaje</span>
+        <h3 class="hotel-name">Real Inn Tijuana</h3>
+        <p class="hotel-loc">Tijuana, Baja California</p>
+        <span class="hotel-cta">
+          Reservar
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+        </span>
+      </div>
     </a>
-    <a href="https://hoteleslucerna.com/es/tijuana" target="_blank" rel="noopener" class="btn btn-blue" style="flex-direction:column;align-items:stretch;padding:18px 20px;text-align:left;gap:4px;">
-      <span style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;letter-spacing:1.5px;text-transform:none;">Hotel Lucerna</span>
-      <span style="font-family:'Lato',sans-serif;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;opacity:.85;">Ver y reservar</span>
+    <a href="https://hoteleslucerna.com/es/tijuana" target="_blank" rel="noopener" class="hotel-card">
+      <div class="hotel-photo">
+        <img src="fotos-cliente/hotel-lucerna.jpg" alt="Hotel Lucerna Tijuana" loading="lazy">
+      </div>
+      <div class="hotel-body">
+        <span class="hotel-eyebrow">Hospedaje</span>
+        <h3 class="hotel-name">Hotel Lucerna</h3>
+        <p class="hotel-loc">Tijuana, Baja California</p>
+        <span class="hotel-cta">
+          Reservar
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+        </span>
+      </div>
     </a>
   </div>
 </section>
@@ -1262,65 +1352,76 @@ section.has-sec-waves{padding-top:84px;padding-bottom:86px}
   <p class="dc-title">Cocktail Formal</p>
 
   <div class="dc-outfits">
-    <!-- Hombre: traje oscuro con brazo levantado señalando -->
+    <!-- Caballero — fashion illustration line art -->
     <div class="dc-outfit">
-      <svg viewBox="0 0 100 220" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <!-- Cabeza -->
-        <ellipse cx="52" cy="22" rx="11" ry="13" fill="#d9b896" stroke="none"/>
-        <!-- Cabello -->
-        <path d="M41 18 Q45 8 55 9 Q64 10 63 22 L60 16 Q55 14 50 17 Q46 19 41 18" fill="#1a1a1a" stroke="none"/>
-        <!-- Cuello camisa -->
-        <path d="M46 34 L46 42 L58 42 L58 34" fill="#fff" stroke="none"/>
-        <!-- Traje saco -->
-        <path d="M38 40 L34 56 L28 70 L26 110 L34 120 L34 220 L48 220 L50 130 L52 220 L66 220 L66 120 L74 110 L72 70 L66 56 L62 40 L52 46 Z" fill="#1f2d3d" stroke="#0d1620" stroke-width="1.2"/>
-        <!-- Solapas -->
-        <path d="M38 40 L46 50 L50 70 L46 60 Z" fill="#0d1620" stroke="none"/>
-        <path d="M62 40 L54 50 L50 70 L54 60 Z" fill="#0d1620" stroke="none"/>
-        <!-- Corbata -->
-        <path d="M48 42 L50 44 L52 42 L54 60 L50 78 L46 60 Z" fill="#a83838" stroke="none"/>
-        <!-- Brazo izquierdo levantado señalando -->
-        <path d="M38 56 L20 30 L14 18 L18 14 L24 26 L42 50 Z" fill="#1f2d3d" stroke="#0d1620" stroke-width="1.2"/>
-        <!-- Mano señalando -->
-        <ellipse cx="14" cy="14" rx="4" ry="5" fill="#d9b896" stroke="none"/>
-        <path d="M11 9 L14 4" stroke="#d9b896" stroke-width="2.5"/>
-        <!-- Brazo derecho a un lado -->
-        <path d="M66 56 L74 90 L70 120 L62 90 Z" fill="#1f2d3d" stroke="#0d1620" stroke-width="1.2"/>
-        <!-- Mano derecha -->
-        <ellipse cx="72" cy="120" rx="4" ry="5" fill="#d9b896" stroke="none"/>
-        <!-- Zapatos -->
-        <ellipse cx="40" cy="218" rx="9" ry="4" fill="#0a0a0a" stroke="none"/>
-        <ellipse cx="60" cy="218" rx="9" ry="4" fill="#0a0a0a" stroke="none"/>
+      <svg viewBox="0 0 100 230" fill="none" stroke="#ffffff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <!-- Cabeza ovalada -->
+        <ellipse cx="50" cy="20" rx="11" ry="14"/>
+        <!-- Cabello suelto editorial -->
+        <path d="M40 16 Q39 6 50 5 Q62 5 60 18"/>
+        <path d="M40 18 L41 26" opacity=".7"/>
+        <path d="M59 16 Q61 22 60 28" opacity=".7"/>
+        <!-- Cuello -->
+        <path d="M47 34 L47 42 M53 34 L53 42"/>
+        <!-- Hombros y saco silueta — un solo trazo continuo -->
+        <path d="M28 50 Q34 44 47 42 L50 50 L53 42 Q66 44 72 50 L70 120 L68 134 L66 226"/>
+        <path d="M28 50 L30 120 L32 134 L34 226"/>
+        <!-- Pierna interior -->
+        <path d="M50 50 L48 134 L46 226"/>
+        <path d="M50 50 L52 134 L54 226"/>
+        <!-- Solapa V profunda -->
+        <path d="M47 42 L43 70 L40 100"/>
+        <path d="M53 42 L57 70 L60 100"/>
+        <!-- Camisa V -->
+        <path d="M47 42 L50 56 L53 42" stroke-width="1"/>
+        <!-- Línea central abotonadura -->
+        <line x1="50" y1="56" x2="50" y2="118" stroke-width=".8" opacity=".55"/>
+        <circle cx="50" cy="72" r=".9" fill="#ffffff" stroke="none"/>
+        <circle cx="50" cy="86" r=".9" fill="#ffffff" stroke="none"/>
+        <circle cx="50" cy="100" r=".9" fill="#ffffff" stroke="none"/>
+        <!-- Pañuelo de bolsillo -->
+        <path d="M58 86 L62 84 L60 90 Z" stroke-width=".9" opacity=".75"/>
+        <!-- Zapatos delgados -->
+        <path d="M34 226 Q38 230 44 228"/>
+        <path d="M56 228 Q62 230 66 226"/>
       </svg>
     </div>
-    <!-- Mujer: vestido largo elegante color sage/verde -->
+    <!-- Dama — fashion illustration line art -->
     <div class="dc-outfit">
-      <svg viewBox="0 0 100 220" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <svg viewBox="0 0 100 230" fill="none" stroke="#ffffff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <!-- Cabeza -->
-        <ellipse cx="50" cy="22" rx="10" ry="12" fill="#e8c4a0" stroke="none"/>
-        <!-- Cabello largo -->
-        <path d="M40 18 Q35 8 50 6 Q65 8 62 22 L65 32 L62 38 L58 30 L60 22 Q55 20 50 22 Q45 20 40 26 L42 38 L38 32 L40 18" fill="#3a2418" stroke="none"/>
-        <!-- Cabello detrás (hombros) -->
-        <path d="M38 32 L36 50 L40 56 L44 46 Z" fill="#3a2418" stroke="none"/>
-        <path d="M62 32 L64 50 L60 56 L56 46 Z" fill="#3a2418" stroke="none"/>
+        <ellipse cx="50" cy="20" rx="10" ry="13"/>
+        <!-- Cabello recogido editorial -->
+        <path d="M40 18 Q40 5 50 4 Q60 5 60 18"/>
+        <!-- Mechones cayendo -->
+        <path d="M40 22 Q34 42 38 52" opacity=".75"/>
+        <path d="M60 22 Q66 42 62 52" opacity=".75"/>
+        <!-- Aretes / detalles -->
+        <circle cx="40" cy="26" r=".8" fill="#ffffff" stroke="none"/>
+        <circle cx="60" cy="26" r=".8" fill="#ffffff" stroke="none"/>
         <!-- Cuello -->
-        <rect x="46" y="32" width="8" height="6" fill="#e8c4a0" stroke="none"/>
-        <!-- Vestido — escote en V parte superior -->
-        <path d="M36 40 L46 42 L50 52 L54 42 L64 40 L66 70 L62 76 L38 76 L34 70 Z" fill="#6b8a76" stroke="#3d5a48" stroke-width="1"/>
-        <!-- Cintura -->
-        <path d="M38 76 L62 76 L60 92 L40 92 Z" fill="#6b8a76" stroke="#3d5a48" stroke-width="1"/>
-        <!-- Falda larga acampanada con abertura -->
-        <path d="M40 92 L60 92 L72 218 L52 218 L50 130 L48 218 L28 218 Z" fill="#6b8a76" stroke="#3d5a48" stroke-width="1"/>
-        <!-- Abertura central de la falda -->
-        <path d="M50 92 L50 218" stroke="#3d5a48" stroke-width=".6" opacity=".6"/>
-        <!-- Brazos -->
-        <path d="M36 40 L26 80 L28 110 L34 80 Z" fill="#e8c4a0" stroke="#a87850" stroke-width=".6"/>
-        <path d="M64 40 L74 80 L72 110 L66 80 Z" fill="#e8c4a0" stroke="#a87850" stroke-width=".6"/>
-        <!-- Manos -->
-        <ellipse cx="28" cy="112" rx="3.5" ry="4.5" fill="#e8c4a0" stroke="none"/>
-        <ellipse cx="72" cy="112" rx="3.5" ry="4.5" fill="#e8c4a0" stroke="none"/>
-        <!-- Tacones -->
-        <path d="M30 218 L36 215 L34 220 Z" fill="#3a2418" stroke="none"/>
-        <path d="M70 218 L64 215 L66 220 Z" fill="#3a2418" stroke="none"/>
+        <path d="M47 33 L47 41 M53 33 L53 41"/>
+        <!-- Escote palabra de honor / corte editorial -->
+        <path d="M34 50 Q40 44 50 46 Q60 44 66 50"/>
+        <!-- Torso ajustado -->
+        <path d="M34 50 L36 86 L38 100"/>
+        <path d="M66 50 L64 86 L62 100"/>
+        <!-- Cintura ceñida -->
+        <path d="M38 100 Q50 104 62 100"/>
+        <!-- Falda larga sirena/columna que se abre -->
+        <path d="M38 100 L30 226"/>
+        <path d="M62 100 L70 226"/>
+        <!-- Borde inferior falda -->
+        <path d="M30 226 Q50 232 70 226"/>
+        <!-- Pliegues sutiles -->
+        <path d="M44 110 L40 224" stroke-width=".7" opacity=".5"/>
+        <path d="M56 110 L60 224" stroke-width=".7" opacity=".5"/>
+        <path d="M50 108 L50 224" stroke-width=".7" opacity=".4"/>
+        <!-- Brazos sutilmente sugeridos -->
+        <path d="M34 52 Q26 78 30 110"/>
+        <path d="M66 52 Q74 78 70 110"/>
+        <!-- Detalle pulsera -->
+        <circle cx="30" cy="108" r="1.6" stroke-width=".9"/>
       </svg>
     </div>
   </div>
