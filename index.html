@@ -577,7 +577,7 @@ section{padding:64px 22px}
 
 /* ── GIFTS ────────────────────────────────────────────── */
 #gifts{background:var(--ink3);padding:64px 22px;}
-.gifts-sub{text-align:center;font-size:17px;color:var(--cream);opacity:.75;line-height:1.75;margin:14px 0 28px;font-weight:500;}
+.gifts-sub{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--cream);opacity:.8;line-height:1.85;margin:14px 0 28px;font-weight:500;letter-spacing:.3px;}
 .gifts-wrap{max-width:310px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
 
 /* ── ALBUM QR ─────────────────────────────────────────── */
@@ -660,6 +660,21 @@ section{padding:64px 22px}
 .fam-parent-amp{
   display:block;font-family:'Great Vibes',cursive;
   font-size:26px;color:var(--peach);line-height:1;margin:2px 0;
+}
+
+/* Padrinos cards */
+.fam-padcard{
+  background:#f3f6fa;border:1px solid var(--hair);border-radius:14px;
+  padding:22px 26px;text-align:center;
+}
+.fam-padcard-role{
+  font-family:'Lato',sans-serif;font-size:9px;font-weight:700;
+  letter-spacing:3.5px;text-transform:uppercase;color:var(--peach);
+  display:block;margin-bottom:8px;
+}
+.fam-padcard-name{
+  font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;
+  color:var(--cream);letter-spacing:.5px;line-height:1.5;margin:0;
 }
 
 /* Padrinos intro */
@@ -796,7 +811,7 @@ section{padding:64px 22px}
 .ft-body{padding:72px 28px 56px;position:relative;z-index:2;}
 .ft-msg{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,5.5vw,28px);font-weight:600;font-style:italic;color:#1a1a1a;line-height:1.5;margin-bottom:12px;}
 .ft-nofaltes{font-family:'Great Vibes',cursive;font-size:clamp(48px,13vw,68px);font-weight:400;color:#1a1a1a;line-height:1.1;margin-bottom:14px;}
-.ft-date{font-family:'Le Major','Bodoni Moda',serif;font-size:clamp(16px,4.5vw,20px);font-weight:400;letter-spacing:4px;text-transform:uppercase;color:#395a7f;margin-bottom:32px;}
+.ft-date{font-family:'Cormorant Garamond',serif;font-size:clamp(15px,4.2vw,19px);font-weight:500;font-style:italic;letter-spacing:2.5px;text-transform:none;color:var(--peach-accent);margin-bottom:32px;}
 .ft-rings{width:120px;height:auto;margin:0 auto 40px;display:block;}
 .el-sep{width:44px;height:1px;background:rgba(57,90,127,.18);margin:0 auto 16px}
 .el-credit{display:inline-flex;align-items:center;gap:8px;color:var(--peach-accent);font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:600;letter-spacing:1.5px;text-decoration:none;opacity:.85;transition:opacity .25s;}
@@ -910,7 +925,7 @@ section.has-sec-waves{padding-top:84px;padding-bottom:86px}
 }
 .loc-unified-photo img{
   width:100%;height:100%;
-  object-fit:cover;object-position:center;
+  object-fit:cover;object-position:center 70%;
   display:block;
 }
 .loc-unified-photo::after{
@@ -1140,7 +1155,7 @@ section.has-sec-waves{padding-top:84px;padding-bottom:86px}
     <p class="fch-n1">Jorge</p>
     <p class="fch-amp">y</p>
     <p class="fch-n1">Griselda</p>
-    <p class="fch-honor">Creemos que algunos seres están destinados a encontrarse.<br>Hoy comenzamos un nuevo capítulo juntos y queremos que seas parte de este día tan especial en nuestra historia.</p>
+    <p class="fch-honor">Creemos que algunas almas están destinadas a encontrarse.<br>Hoy comenzamos un nuevo capítulo juntos y queremos que seas parte de este día tan especial en nuestra historia.</p>
     <p class="fch-date">25.07.26</p>
   </div>
 </section>
@@ -1535,7 +1550,7 @@ section.has-sec-waves{padding-top:84px;padding-bottom:86px}
       </div>
       <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
         <div style="width:34px;height:34px;border-radius:50%;background:#9E9E9E;border:2px solid rgba(255,255,255,.45);"></div>
-        <span style="font-family:'Cormorant Garamond',serif;font-size:12px;color:rgba(255,255,255,.8);letter-spacing:.5px;">Gris anulado</span>
+        <span style="font-family:'Cormorant Garamond',serif;font-size:12px;color:rgba(255,255,255,.8);letter-spacing:.5px;">Gris azulado</span>
       </div>
       <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
         <div style="width:34px;height:34px;border-radius:50%;background:#4A9B95;border:2px solid rgba(255,255,255,.45);"></div>
@@ -1547,7 +1562,8 @@ section.has-sec-waves{padding-top:84px;padding-bottom:86px}
   <p class="dc-msg">Reservaremos el color blanco<br>para la novia.</p>
   <div class="dc-avoid" style="margin-top:32px">
     <span class="dc-avoid-lbl">Evitar</span>
-    <div class="dc-swatch" style="background:#4169E1" title="Azul Navi"></div>
+    <div class="dc-swatch" style="background:#001f5b" title="Azul Navy"></div>
+    <div class="dc-swatch" style="background:#6b8fad" title="Royal Dusty Blue"></div>
     <div class="dc-swatch" style="background:#CC2200" title="Rojo"></div>
     <div class="dc-swatch" style="background:#ffffff" title="Blanco"></div>
   </div>
@@ -1692,38 +1708,17 @@ section.has-sec-waves{padding-top:84px;padding-bottom:86px}
   <p class="fam-pad-intro">Porque son parte de nuestras vidas, es nuestro deseo que compartan con nosotros este día tan especial.</p>
   <p class="fam-pad-header">Nuestros Padrinos</p>
 
-  <div class="fam-pad-carousel" id="famPadCarousel">
-
-    <!-- Padrino 1 -->
-    <div class="fam-pad-item">
-      <div class="fam-pad-ico-lg">
-        <svg viewBox="0 0 68 68" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M34 14 Q24 8 18 18 Q12 28 34 44 Q56 28 50 18 Q44 8 34 14"/>
-        </svg>
-      </div>
-      <p class="fam-pad-names">
-        Alberto Bañuelos
-      </p>
+  <div style="display:flex;flex-direction:column;gap:14px;max-width:320px;margin:0 auto;">
+    <div class="fam-padcard">
+      <span class="fam-padcard-role">Padrino</span>
+      <p class="fam-padcard-name">Alberto Bañuelos</p>
     </div>
-
-    <!-- Padrinas 2 -->
-    <div class="fam-pad-item">
-      <div class="fam-pad-ico-lg">
-        <svg viewBox="0 0 68 68" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M34 14 Q24 8 18 18 Q12 28 34 44 Q56 28 50 18 Q44 8 34 14"/>
-        </svg>
-      </div>
-      <p class="fam-pad-names">
-        Melisa
-        <span class="fam-pad-amp">&amp;</span>
-        Brenda Aparicio
-      </p>
+    <div class="fam-padcard">
+      <span class="fam-padcard-role">Madrinas</span>
+      <p class="fam-padcard-name">Melisa Aparicio</p>
+      <p class="fam-padcard-name">Brenda Aparicio</p>
     </div>
-
   </div>
-
-  <!-- Dots indicador del carrusel -->
-  <div class="fam-pad-dots" id="famPadDots" aria-hidden="true"></div>
 
   <!-- Damas / Caballeros — PENDIENTE: el cliente no especificó -->
 
