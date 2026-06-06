@@ -2023,7 +2023,7 @@ const vBtn = document.getElementById('vinyl-btn');
 function showVinyl(){ vBtn && vBtn.classList.add('is-ready'); }
 function startMusic(){
   if(!aud) return;
-  aud.currentTime = 15;
+  aud.currentTime = 0;
   aud.play().then(()=>{ vBtn && vBtn.classList.add('is-playing'); }).catch(()=>{});
 }
 if(vBtn){
